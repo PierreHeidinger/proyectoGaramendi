@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="claseClientes.cs" />
     <Compile Include="claseInventario.cs" />
+    <Compile Include="claseUsuario.cs" />
     <Compile Include="claseUtilitarios.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

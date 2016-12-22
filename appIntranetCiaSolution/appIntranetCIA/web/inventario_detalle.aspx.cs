@@ -157,6 +157,7 @@ namespace appIntranetCIA.web
             btn_Editar.Enabled = !_flat;
             btn_Almacen.Enabled = !_flat;
 
+
             btn_Guardar.Enabled = _flat;
             btn_Cancelar.Enabled = _flat;
 
@@ -212,19 +213,21 @@ namespace appIntranetCIA.web
                         if(Request.QueryString["cod_producto"] != null)
                         {
                           MostrarDatos_Producto(Request.QueryString["cod_producto"]);
-                          estado_controles(false);
+                        estado_controles(false);
                         mostrar_panel(1);
+                         
                         if (Request.QueryString["n"] != null)
                                 {
                             Notificacion("1", "Nuevo producto agregado");
                                 }
                         }
                         else
-                        {
-                            estado_controles(true);
-                             cbo_Marca.Enabled = false;
-                            mostrar_panel(1);
-                    }
+                    {
+                        mostrar_panel(1);
+                        estado_controles(true);
+                            cbo_Marca.Enabled = false;
+                           
+                          }
                     
 
                 }catch(Exception ex)

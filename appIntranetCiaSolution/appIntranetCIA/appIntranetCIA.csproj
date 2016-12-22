@@ -186,6 +186,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\login\css\animate-custom.css" />
+    <Content Include="Content\login\css\style.css" />
+    <Content Include="Content\login\fonts\fontomas-webfont.svg" />
+    <Content Include="Content\login\images\banner.jpg" />
+    <Content Include="Content\login\images\tick.png" />
     <Content Include="Content\master\css\animate.min.css" />
     <Content Include="Content\master\css\bootstrap.min.css" />
     <Content Include="Content\master\css\demo.css" />
@@ -265,8 +270,12 @@
     <Content Include="images\borra.png" />
     <Content Include="images\icono_calendario.png" />
     <Content Include="web\inventario_detalle.aspx" />
+    <Content Include="web\login\Login.aspx" />
     <Content Include="web\marcas.aspx" />
     <Content Include="web\subcategoria.aspx" />
+    <Content Include="Content\login\fonts\fontomas-webfont.eot" />
+    <Content Include="Content\login\fonts\fontomas-webfont.ttf" />
+    <Content Include="Content\login\fonts\fontomas-webfont.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
@@ -382,6 +391,13 @@
     </Compile>
     <Compile Include="web\inventario_detalle.aspx.designer.cs">
       <DependentUpon>inventario_detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\marcas.aspx.cs">
       <DependentUpon>marcas.aspx</DependentUpon>
