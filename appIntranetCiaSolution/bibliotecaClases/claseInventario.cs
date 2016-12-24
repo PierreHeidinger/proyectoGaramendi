@@ -282,5 +282,71 @@ namespace bibliotecaClases
 
 
         #endregion
+
+        #region "LISTAR PRODUCTOS-ALMACEN"
+
+        public DataTable FPub_ListarProductosAlmacen(String v_Producto)
+        {
+            return FPriv_ListarProductosAlmacen(v_Producto);
+        }
+
+        private DataTable FPriv_ListarProductosAlmacen(String v_Producto)
+        {
+            cn.getCn.Open();
+            SqlCommand cmd = new SqlCommand("SP_PRODUCTO_ALMACEN_LISTAR_CAB", cn.getCn);
+            cmd.Parameters.AddWithValue("@COD_PRODUCTO", v_Producto);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            cn.getCn.Close();
+            return dt;
+        }
+
+        #endregion
+
+        #region "MANTENIMIENTO PRODUCTOS-ALMACEN"
+
+
+        public String FPub_ProductosAlmacenMant(String v_IND, String v_CODIGO, String v_COD_PRODUCTO, int v_CANTIDAD_INGRESO, int v_CANTIDAD_VARIABLE, float v_PRECIO_UNIDAD, float v_TOTAL_COMPRA, float v_UTILIDAD_UNIDAD, float v_UTILIDAD_TOTAL, String v_ESTADO)
+        {
+            return FPriv_ProductosAlmacenMant( v_IND, v_CODIGO ,v_COD_PRODUCTO,  v_CANTIDAD_INGRESO,  v_CANTIDAD_VARIABLE,  v_PRECIO_UNIDAD,  v_TOTAL_COMPRA,  v_UTILIDAD_UNIDAD,  v_UTILIDAD_TOTAL,  v_ESTADO);
+        }
+
+
+
+        private String FPriv_ProductosAlmacenMant(String v_IND, String v_CODIGO,String v_COD_PRODUCTO, int v_CANTIDAD_INGRESO,int v_CANTIDAD_VARIABLE,float v_PRECIO_UNIDAD,float v_TOTAL_COMPRA,float v_UTILIDAD_UNIDAD,float v_UTILIDAD_TOTAL,String v_ESTADO)
+        {
+            cn.getCn.Open();
+
+            SqlCommand cmd = new SqlCommand("SP_PRODUCTO_ALMACEN_MANT", cn.getCn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new SqlParameter("@IND", v_IND));
+            cmd.Parameters.AddWithValue("@CODIGO", v_CODIGO);
+            cmd.Parameters.AddWithValue("@COD_PRODUCTO", v_COD_PRODUCTO);
+            cmd.Parameters.AddWithValue("@CANTIDAD_INGRESO", v_CANTIDAD_INGRESO);
+            cmd.Parameters.AddWithValue("@CANTIDAD_VARIABLE", v_CANTIDAD_VARIABLE);
+            cmd.Parameters.AddWithValue("@PRECIO_UNIDAD", v_PRECIO_UNIDAD);
+            cmd.Parameters.AddWithValue("@TOTAL_COMPRA", v_TOTAL_COMPRA);
+            cmd.Parameters.AddWithValue("@UTILIDAD_UNIDAD", v_UTILIDAD_UNIDAD);
+            cmd.Parameters.AddWithValue("@UTILIDAD_TOTAL", v_UTILIDAD_TOTAL);
+            cmd.Parameters.AddWithValue("@ESTADO", v_ESTADO);
+            int i = cmd.ExecuteNonQuery();
+
+            cn.getCn.Close();
+
+
+            return i.ToString();
+
+
+        }
+
+
+
+
+
+
+        #endregion
+
     }
 }

@@ -1,8 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/web/page.Master" AutoEventWireup="true" CodeBehind="inventario.aspx.cs" Inherits="appIntranetCIA.web.inventario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/web/page.Master" AutoEventWireup="true" CodeBehind="ventas.aspx.cs" Inherits="appIntranetCIA.web.ventas" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="titlePage" runat="server">
-    Inventario
+    VENTAS
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+
+    <asp:ScriptManager runat="server"></asp:ScriptManager>
     
          <div class="col-md-12">
                             <asp:Literal runat="server" ID="lt_Notificacion"></asp:Literal>
@@ -11,11 +13,11 @@
                             <div class="col-md-12">
                                    <div class="form-group">
                                        
-                                        <asp:Button runat="server" ID="btn_Nuevo" Text="NUEVO" Width="130px" CssClass="btn btn-info btn-fill" OnClick="btn_Nuevo_Click"  />
+                                        <asp:Button runat="server" ID="btn_Nuevo" Text="NUEVO" Width="130px" CssClass="btn btn-info btn-fill"  />
                                         
-                                        <asp:Button runat="server" Text="CATEGORIAS"  Width="130px" ID="btn_Categorias" CssClass="btn btn-info btn-fill" OnClick="btn_Categorias_Click" />
-                                        <asp:Button runat="server" Text="SUB-CATEG" Width="130px" ID="btn_SubCategorias" CssClass="btn btn-info btn-fill" OnClick="btn_SubCategorias_Click" />                                      
-                                        <asp:Button runat="server" Text="MARCAS" ID="btn_Marcas" Width="130px"  CssClass="btn btn-info btn-fill" OnClick="btn_Marcas_Click" />
+                                        <asp:Button runat="server" Text="CATEGORIAS"  Width="130px" ID="btn_Categorias" CssClass="btn btn-info btn-fill"  />
+                                        <asp:Button runat="server" Text="SUB-CATEG" Width="130px" ID="btn_SubCategorias" CssClass="btn btn-info btn-fill"  />                                      
+                                        <asp:Button runat="server" Text="MARCAS" ID="btn_Marcas" Width="130px"  CssClass="btn btn-info btn-fill"  />
                                          <asp:Button runat="server" Text="IMPRIMIR" Width="130px"  CssClass="btn btn-warning btn-fill" />
                                         <asp:Button runat="server" ID="btn_ExportarExcel" Width="130px"  Text="EXCEL" BackColor="#1ABC9C" CssClass="btn btn-default btn-fill pull-right"  />
                                    </div>                                   
@@ -36,7 +38,7 @@
                                       <div class="col-md-2">
                                             <div class="form-group">
                                                 <label>Codigo :</label>
-                                                <asp:TextBox runat="server"  onKeyPress="return checkIt(event)"  CssClass="form-control" placeHolder="1002..." ID="txt_Codigo" AutoCompleteType="Disabled" OnTextChanged="txt_Codigo_TextChanged"></asp:TextBox>
+                                                <asp:TextBox runat="server"  onKeyPress="return checkIt(event)"  CssClass="form-control" placeHolder="1002..." ID="txt_Codigo" AutoCompleteType="Disabled" ></asp:TextBox>
                                                 
                                             </div>
                                         </div>  
@@ -46,7 +48,7 @@
                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <label>Descripcion :</label>
-                                                <asp:TextBox runat="server" CssClass="form-control" placeHolder="Cemento..." ID="txt_Descripcion"  AutoCompleteType="Disabled" OnTextChanged="txt_Descripcion_TextChanged"></asp:TextBox>                                              
+                                                <asp:TextBox runat="server" CssClass="form-control" placeHolder="Cemento..." ID="txt_Descripcion"  AutoCompleteType="Disabled" ></asp:TextBox>                                              
                                             </div>
                                         </div>
 
@@ -57,7 +59,7 @@
                                                     
                                                     <tr>                                                       
                                                         <td>
-                                                            <asp:TextBox runat="server" CssClass="form-control" ID="txt_Fecha1"  AutoCompleteType="Disabled" OnTextChanged="txt_Fecha1_TextChanged"></asp:TextBox>
+                                                            <asp:TextBox runat="server" CssClass="form-control" ID="txt_Fecha1"  AutoCompleteType="Disabled" ></asp:TextBox>
                                                         </td>
                                                         <td>
                                                             <img src="../images/icono_calendario.png" id="IMG_FECHA" width="35" />        
@@ -79,7 +81,7 @@
                                                     
                                                     <tr>                                                       
                                                         <td>
-                                                            <asp:TextBox runat="server" CssClass="form-control" ID="txt_Fecha2"  AutoCompleteType="Disabled" OnTextChanged="txt_Fecha2_TextChanged"></asp:TextBox>
+                                                            <asp:TextBox runat="server" CssClass="form-control" ID="txt_Fecha2"  AutoCompleteType="Disabled" ></asp:TextBox>
                                                         </td>
                                                         <td>
                                                             <img src="../images/icono_calendario.png" id="IMG_FECHA1" width="35" />        
@@ -171,6 +173,10 @@
                                 
                             </div>
                         </div>
+
+
+
+
 
 
 </asp:Content>

@@ -17,11 +17,22 @@ namespace appIntranetCIA.web
 
         claseInventario obj_inventario = new claseInventario();
         DataTable oDt_Datos;
+        
 
         #endregion
 
         #region "Procedimientos"
 
+
+        private void Limpiar()
+        {
+            txt_Cantidad.Text = "0";
+            txt_UnidadCompra.Text = "0.00";
+            txt_TotalCompra.Text = "0.00";
+            txt_UtilidadUnidad.Text = "0.00";
+            txt_UtilidadTotal.Text = "0.00";
+            txt_VentaTotal.Text = "0.00";
+        }
 
         private void seterCategorias()
         {
@@ -137,6 +148,9 @@ namespace appIntranetCIA.web
                 }
 
 
+
+                txt_Producto.Text = txt_Descripcion.Text;
+
                 
             }
         }
@@ -197,6 +211,54 @@ namespace appIntranetCIA.web
         }
 
 
+
+        private void Listar_Almacen(String v_Producto)
+        {
+            oDt_Datos = obj_inventario.FPub_ListarProductosAlmacen(v_Producto);
+            dg_Almacen.DataSource = oDt_Datos;
+            dg_Almacen.DataBind();
+        }
+
+
+
+        private void color_celdas()
+        {
+             
+            try
+            {
+                Label estado = new Label();
+
+                for (int i = 0; i < dg_Almacen.Items.Count; i++)
+                {
+                    estado = (Label)dg_Almacen.Items[i].FindControl("lbl_estado");
+
+                    if (estado.Text == "1")
+                    {
+                        dg_Almacen.Items[i].BackColor = System.Drawing.Color.PaleGreen ;
+                    }
+                    else if (estado.Text == "2")
+                    {
+                        dg_Almacen.Items[i].BackColor = System.Drawing.Color.Gold;
+                    }
+                    else if (estado.Text == "3")
+                    {
+                        dg_Almacen.Items[i].BackColor = System.Drawing.Color.RosyBrown;
+                    }
+
+
+
+
+
+                }
+            }
+            catch (Exception EX)
+            {
+                throw EX;
+            }
+        
+     }
+
+
         #endregion
 
 
@@ -212,10 +274,10 @@ namespace appIntranetCIA.web
 
                         if(Request.QueryString["cod_producto"] != null)
                         {
-                          MostrarDatos_Producto(Request.QueryString["cod_producto"]);
-                        estado_controles(false);
-                        mostrar_panel(1);
-                         
+                            MostrarDatos_Producto(Request.QueryString["cod_producto"]);
+                            estado_controles(false);
+                            mostrar_panel(1);
+                             Listar_Almacen(Request.QueryString["cod_producto"]);
                         if (Request.QueryString["n"] != null)
                                 {
                             Notificacion("1", "Nuevo producto agregado");
@@ -335,6 +397,99 @@ namespace appIntranetCIA.web
         protected void btn_Detalle_Click(object sender, EventArgs e)
         {
             mostrar_panel(1);
+        }
+
+        protected void dg_Almacen_DeleteCommand(object source, DataGridCommandEventArgs e)
+        {
+
+            Label cantidad_ingreso = (Label) dg_Almacen.Items[e.Item.ItemIndex].FindControl("lbl_cantidad_ingreso");
+            Label cantidad_variable = (Label)dg_Almacen.Items[e.Item.ItemIndex].FindControl("lbl_cantidad_variable");
+            Label estado = (Label)dg_Almacen.Items[e.Item.ItemIndex].FindControl("lbl_estado");
+            TextBox codigo = (TextBox)dg_Almacen.Items[e.Item.ItemIndex].FindControl("txt_codigo_x");
+
+            try {
+
+       
+                 if(cantidad_ingreso.Text != cantidad_variable.Text)
+                {
+                    Notificacion("2", "El produccto ya tiene un consumo , no puede ser anulado");
+                    return;
+                }else if(estado.Text == "2"){
+                    Notificacion("2", "El producto esta Agotado!");
+                    return;
+                }else if (estado.Text == "3")
+                {
+                    Notificacion("2", "El producto ya se encuentra Anulado!");
+                    return;
+                }
+                else if (cantidad_ingreso.Text == cantidad_variable.Text && estado.Text == "1")
+                {
+                    String res = obj_inventario.FPub_ProductosAlmacenMant("3", codigo.Text, Request.QueryString["cod_producto"], int.Parse(cantidad_ingreso.Text), int.Parse(cantidad_variable.Text),
+                                                                     float.Parse(txt_UnidadCompra.Text), float.Parse(txt_TotalCompra.Text), float.Parse(txt_UtilidadUnidad.Text), float.Parse(txt_UtilidadTotal.Text), estado.Text);
+
+                    Notificacion("1", "Ingreso de Producto anulado!");
+                    Listar_Almacen(Request.QueryString["cod_producto"]);
+                    return;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Notificacion("2", ex.Message);
+            }
+            
+
+        }
+
+        protected void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(txt_Cantidad.Text == "" || txt_Cantidad.Text == "0")
+                {
+                    Notificacion("2", "Ingrese la cantidad");
+                    return;
+                }
+                if(txt_UnidadCompra.Text == "" || txt_UnidadCompra.Text == "0.00")
+                {
+                    Notificacion("2", "Ingrese el Precio por unidad");
+                    return;
+                }
+                if (txt_TotalCompra.Text == "" || txt_TotalCompra.Text == "0.00")
+                {
+                    Notificacion("2", "Ingrese el Precio Total de compra");
+                    return;
+                }
+
+
+
+                String res = obj_inventario.FPub_ProductosAlmacenMant("1","" ,Request.QueryString["cod_producto"], int.Parse(txt_Cantidad.Text), int.Parse(txt_Cantidad.Text),
+                                                                      float.Parse(txt_UnidadCompra.Text), float.Parse(txt_TotalCompra.Text), float.Parse(txt_UtilidadUnidad.Text),float.Parse( txt_UtilidadTotal.Text), "1");
+
+
+                Notificacion("1", "Ingreso registrado con exito!");
+                Listar_Almacen(Request.QueryString["cod_producto"]);
+                Limpiar();
+
+
+            }
+            catch(Exception ex)
+            {
+                Notificacion("2", ex.Message);
+            }
+        }
+
+        protected void dg_Almacen_ItemDataBound(object sender, DataGridItemEventArgs e)
+        {
+            color_celdas();
+        }
+
+
+
+        protected void btn_Limpiar_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }
