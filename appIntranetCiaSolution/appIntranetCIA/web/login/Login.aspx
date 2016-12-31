@@ -8,7 +8,7 @@
     
 
 
-    <title>Majestic Login Form Flat Responsive widget Template :: w3layouts</title>
+    <title> ::GARAMENDI::</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Majestic Login Form Widget Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
@@ -66,7 +66,7 @@
 		                    
 	                    </div>
                     </div>
-                    <p class="agileits">© 2016 Majestic Login Form. All Rights Reserved | Design by <a href="https://w3layouts.com/" target="_blank">w3layouts</a></p> 
+                    <p class="agileits">© <%= DateTime.Today.Year.ToString() %> UNITEC-PERU  All Rights Reserved </p> 
 
 
     </form>

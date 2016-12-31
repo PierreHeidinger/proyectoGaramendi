@@ -58,6 +58,15 @@ namespace appIntranetCIA.web {
         protected global::System.Web.UI.WebControls.Button btn_Marcas;
         
         /// <summary>
+        /// Control btn_Reportes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_Reportes;
+        
+        /// <summary>
         /// Control btn_ExportarExcel.
         /// </summary>
         /// <remarks>
@@ -67,22 +76,22 @@ namespace appIntranetCIA.web {
         protected global::System.Web.UI.WebControls.Button btn_ExportarExcel;
         
         /// <summary>
-        /// Control txt_Codigo.
+        /// Control txt_Cliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Codigo;
+        protected global::System.Web.UI.WebControls.TextBox txt_Cliente;
         
         /// <summary>
-        /// Control txt_Descripcion.
+        /// Control txt_Producto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Descripcion;
+        protected global::System.Web.UI.WebControls.TextBox txt_Producto;
         
         /// <summary>
         /// Control txt_Fecha1.
@@ -121,12 +130,12 @@ namespace appIntranetCIA.web {
         protected global::AjaxControlToolkit.CalendarExtender CalendarExtender1;
         
         /// <summary>
-        /// Control dg_Inventario.
+        /// Control dg_ventas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid dg_Inventario;
+        protected global::System.Web.UI.WebControls.DataGrid dg_ventas;
     }
 }

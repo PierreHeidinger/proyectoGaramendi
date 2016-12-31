@@ -13,7 +13,7 @@
 	<link rel="icon" type="image/png" href="../Content/master/img/favicon.ico"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>::GARAMENDI SAC::</title>
+	<title>:: GARAMENDI ::</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -84,17 +84,12 @@
                     </a>
                 </li>
                <li>
-                    <a href="icons.html">
+                    <a href="ventas.aspx">
                         <i class="pe-7s-science"></i>
                         <p>Ventas</p>
                     </a>
                 </li>
-                <li>
-                    <a href="notifications.html">
-                        <i class="pe-7s-bell"></i>
-                        <p>Reportes</p>
-                    </a>
-                </li>
+               
 				
             </ul>
     	</div>

@@ -455,14 +455,19 @@ namespace appIntranetCIA.web
 
         protected void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            if(Request.QueryString["cod_cliente"] != null)
+            try { 
+                if(Request.QueryString["cod_cliente"] != null)
+                {
+                    MostrarDetalle_Cliente(Request.QueryString["cod_cliente"].ToString());
+                    Estado_Controles(false);
+                    MostrarPaneles(1);
+                    return;
+                }
+                Response.Redirect("clientes.aspx");
+            }catch(Exception ex)
             {
-                MostrarDetalle_Cliente(Request.QueryString["cod_cliente"].ToString());
-                Estado_Controles(false);
-                MostrarPaneles(1);
-                return;
+                Notificacion("2", ex.Message);
             }
-            Response.Redirect("clientes.aspx");
         }
 
         protected void btn_Estado_Click(object sender, EventArgs e)

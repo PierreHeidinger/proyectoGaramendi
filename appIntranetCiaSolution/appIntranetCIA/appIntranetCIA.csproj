@@ -190,6 +190,8 @@
     <Content Include="Content\login\css\style.css" />
     <Content Include="Content\login\fonts\fontomas-webfont.svg" />
     <Content Include="Content\login\images\banner.jpg" />
+    <Content Include="Content\login\images\BANNER3.jpg" />
+    <Content Include="Content\login\images\mainbackground.gif" />
     <Content Include="Content\login\images\tick.png" />
     <Content Include="Content\master\css\animate.min.css" />
     <Content Include="Content\master\css\bootstrap.min.css" />
@@ -225,6 +227,10 @@
     <Content Include="Content\master\js\demo.js" />
     <Content Include="Content\master\js\jquery-1.10.2.js" />
     <Content Include="Content\master\js\light-bootstrap-dashboard.js" />
+    <Content Include="Content\modal\remodal-default-theme.css" />
+    <Content Include="Content\modal\remodal.css" />
+    <Content Include="Content\modal\remodal.js" />
+    <Content Include="Content\modal\remodal.min.js" />
     <Content Include="Content\Utilidades.js" />
     <Content Include="Default.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -268,7 +274,9 @@
     <Content Include="Content\master\sass\lbd\_variables.scss" />
     <Content Include="Content\master\sass\light-bootstrap-dashboard.scss" />
     <Content Include="images\borra.png" />
+    <Content Include="images\cliente.png" />
     <Content Include="images\icono_calendario.png" />
+    <Content Include="images\package_add_256.png" />
     <Content Include="images\warning.gif" />
     <Content Include="web\inventario_detalle.aspx" />
     <Content Include="web\login\Login.aspx" />
@@ -278,6 +286,7 @@
     <Content Include="Content\login\fonts\fontomas-webfont.ttf" />
     <Content Include="Content\login\fonts\fontomas-webfont.woff" />
     <Content Include="web\ventas.aspx" />
+    <Content Include="web\ventas_detalle.aspx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.js" />
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
@@ -429,10 +438,16 @@
     <Compile Include="web\ventas.aspx.designer.cs">
       <DependentUpon>ventas.aspx</DependentUpon>
     </Compile>
+    <Compile Include="web\ventas_detalle.aspx.cs">
+      <DependentUpon>ventas_detalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\ventas_detalle.aspx.designer.cs">
+      <DependentUpon>ventas_detalle.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\bibliotecaClases\bibliotecaClases.csproj">

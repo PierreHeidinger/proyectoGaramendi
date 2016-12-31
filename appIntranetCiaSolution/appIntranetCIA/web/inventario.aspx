@@ -3,7 +3,7 @@
     Inventario
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-    
+    <asp:ScriptManager runat="server"></asp:ScriptManager>
          <div class="col-md-12">
                             <asp:Literal runat="server" ID="lt_Notificacion"></asp:Literal>
                             </div>

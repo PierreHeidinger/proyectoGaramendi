@@ -3,7 +3,7 @@
     Inventario
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-
+    
     <script src="../Content/Utilidades.js"></script>
 
 
