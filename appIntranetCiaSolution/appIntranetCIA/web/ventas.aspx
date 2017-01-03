@@ -18,8 +18,8 @@
                                         <asp:Button runat="server" Text="CATEGORIAS"  Width="130px" ID="btn_Categorias" CssClass="btn btn-info btn-fill"  />
                                         <asp:Button runat="server" Text="SUB-CATEG" Width="130px" ID="btn_SubCategorias" CssClass="btn btn-info btn-fill"  />                                      
                                         <asp:Button runat="server" Text="MARCAS" ID="btn_Marcas" Width="130px"  CssClass="btn btn-info btn-fill"  />
-                                         <asp:Button runat="server" Text="REPORTES" ID="btn_Reportes" Width="130px"  CssClass="btn btn-warning btn-fill" />
-                                        <asp:Button runat="server" ID="btn_ExportarExcel" Width="130px"  Text="EXCEL" BackColor="#1ABC9C" CssClass="btn btn-default btn-fill pull-right"  />
+                                         <asp:Button runat="server" Text="REPORTES" Visible="false" ID="btn_Reportes" Width="130px"  CssClass="btn btn-warning btn-fill" />
+                                        <asp:Button runat="server" ID="btn_ExportarExcel" Width="130px"  Text="EXCEL" BackColor="#1ABC9C" CssClass="btn btn-default btn-fill pull-right" OnClick="btn_ExportarExcel_Click"  />
                                    </div>                                   
                              </div>  
 
@@ -106,9 +106,9 @@
                             </div>
                             <div class="content">
                                 
-                                    <div style="overflow:auto;height:100%;width:100%">
+                                    <div style="overflow:auto;height:550px;width:100%">
                                                                                               <asp:DataGrid ID="dg_ventas" runat="server" Width="100%" CssClass="table table-hover table-striped"   
-                                                                                                  PageSize="10"  AutoGenerateColumns="false"  OnPageIndexChanged="dg_ventas_PageIndexChanged"  AllowCustomPaging="False" AllowPaging="True">                                                                                                                                                                                                                                                                                                                                 
+                                                                                                   AutoGenerateColumns="false" >                                                                                                                                                                                                                                                                                                                                 
                                                                                                   <HeaderStyle  Font-Bold="true"  ForeColor="White" BackColor="#1ABC9C"/>
                                                                                                   <Columns>
                                                                                                       <asp:TemplateColumn HeaderText="CODIGO">
@@ -197,10 +197,7 @@
                                                                                                         
 
                                                                                                   </Columns>
-                                                                                                  
-                                                                                                  <PagerStyle Mode="NumericPages" HorizontalAlign="Left" 
-                                                                                                                    VerticalAlign="Middle" 
-                                                                                                                Font-Size="14pt" Wrap="True" BorderStyle="None"    />
+                                                                                      
                                                                                  
                                                                                               </asp:DataGrid>
                                                                                                </div>

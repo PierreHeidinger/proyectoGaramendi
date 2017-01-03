@@ -19,6 +19,7 @@
                 var resultado = parseInt(cantidad) * parseFloat(punidad);
                 var res = parseFloat(resultado).toFixed(2);
                 document.getElementById('<%= txt_TotalCompra.ClientID %>').value = res;
+                total();
             } else {
 
                  var cantidad = document.getElementById('<%= txt_Cantidad.ClientID %>').value;
@@ -27,7 +28,8 @@
 
                 var resultado = parseFloat(ptotal) / parseInt(cantidad);
                 var res = parseFloat(resultado).toFixed(2);
-                 document.getElementById('<%= txt_UnidadCompra.ClientID %>').value = res;
+                document.getElementById('<%= txt_UnidadCompra.ClientID %>').value = res;
+                total();
             }
         }
 
@@ -37,22 +39,46 @@
             if(indicador == 1){
                 var cantidad = document.getElementById('<%= txt_Cantidad.ClientID %>').value;
                // var ptotal = document.getElementById('<%= txt_TotalCompra.ClientID %>').value;
-                var punidad = document.getElementById('<%= txt_UnidadCompra.ClientID %>').value;
+                var punidadu = document.getElementById('<%= txt_UtilidadUnidad.ClientID %>').value;
 
-                var resultado = parseInt(cantidad) * parseFloat(punidad);
+                var resultado = parseInt(cantidad) * parseFloat(punidadu);
                 var res = parseFloat(resultado).toFixed(2);
-                document.getElementById('<%= txt_TotalCompra.ClientID %>').value = res;
+                document.getElementById('<%= txt_UtilidadTotal.ClientID %>').value = res;
+                total();
             } else {
 
                  var cantidad = document.getElementById('<%= txt_Cantidad.ClientID %>').value;
-               var ptotal = document.getElementById('<%= txt_TotalCompra.ClientID %>').value;
+                 var ptotalu = document.getElementById('<%= txt_UtilidadTotal.ClientID %>').value;
                 // var punidad = document.getElementById('<%= txt_UnidadCompra.ClientID %>').value;
 
-                var resultado = parseFloat(ptotal) / parseInt(cantidad);
+                var resultado = parseFloat(ptotalu) / parseInt(cantidad);
                 var res = parseFloat(resultado).toFixed(2);
-                 document.getElementById('<%= txt_UnidadCompra.ClientID %>').value = res;
+                document.getElementById('<%= txt_UtilidadUnidad.ClientID %>').value = res;
+                total();
             }
+
+         }
+
+        function total() {
+
+            var total1 = document.getElementById('<%= txt_TotalCompra.ClientID %>').value;
+            var total2 = document.getElementById('<%= txt_UtilidadTotal.ClientID %>').value;
+
+            var resultado = parseFloat(total1) + parseFloat(total2);
+            var res = parseFloat(resultado).toFixed(2);
+            document.getElementById('<%= txt_VentaTotal.ClientID %>').value = res;
         }
+
+
+        function acceptNum(evt) {
+            var nav4 = window.Event ? true : false;
+            // NOTE: Backspace = 8, Enter = 13, '0' = 48, '9' = 57, '.' = 46
+            var key = nav4 ? evt.which : evt.keyCode;
+            return (key <= 13 || (key >= 48 && key <= 57) || key == 46);
+        }
+
+
+
 
     </script>
 
@@ -136,7 +162,7 @@
                                         <div class="col-md-4">
                                             <div class="form-group">
                                                 <label>Peso Kg. :</label>
-                                                <asp:TextBox runat="server" ID="txt_Peso"  style="text-align:right" onKeyPress="return checkIt(event)" AutoCompleteType="Disabled" Text="0.00" CssClass="form-control"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_Peso"  style="text-align:right" onKeyPress="return acceptNum(event)" AutoCompleteType="Disabled" Text="0.00" CssClass="form-control"></asp:TextBox>
                                             </div>
                                         </div>
                                        
@@ -204,7 +230,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="btn-fill pull-right"">
-                                                    <asp:Button  runat="server" CssClass="btn btn-info btn-fill pull-right" ID="txt_Resumen" Text="RESUMEN" />
+                                                    <asp:Button  runat="server" CssClass="btn btn-info btn-fill pull-right" ID="btn_Excel"  BackColor="#1ABC9C" Text="EXCEL" OnClick="btn_Excel_Click" />
                                             </div>
                                         </div>
                    
@@ -221,31 +247,31 @@
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <label>Precio Total Compra :</label>
-                                               <asp:TextBox runat="server" style="text-align:right" Text="0.00" onkeyup="Calculo(2);" CssClass="form-control" ID="txt_TotalCompra"></asp:TextBox>
+                                               <asp:TextBox runat="server" style="text-align:right" Text="0.00" onkeyup="Calculo(2);" onKeyPress="return acceptNum(event)"  CssClass="form-control" ID="txt_TotalCompra"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <label>Precio x Unidad :</label>
-                                               <asp:TextBox runat="server" style="text-align:right" Text="0.00" onkeyup="Calculo(1);"  CssClass="form-control" ID="txt_UnidadCompra"></asp:TextBox>
+                                               <asp:TextBox runat="server" style="text-align:right" Text="0.00" onkeyup="Calculo(1);" onKeyPress="return acceptNum(event)"   CssClass="form-control" ID="txt_UnidadCompra"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <label>Utiidad x Unidad :</label>
-                                               <asp:TextBox runat="server" style="text-align:right" Text="0.00"   CssClass="form-control" ID="txt_UtilidadUnidad"></asp:TextBox>
+                                               <asp:TextBox runat="server" style="text-align:right" Text="0.00" onkeyup="CalculoUtilidad(1)" onKeyPress="return acceptNum(event)"   CssClass="form-control" ID="txt_UtilidadUnidad"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <label>Utilidad Total :</label>
-                                               <asp:TextBox runat="server" style="text-align:right" Text="0.00"   CssClass="form-control" ID="txt_UtilidadTotal"></asp:TextBox>
+                                               <asp:TextBox runat="server" style="text-align:right" Text="0.00" onkeyup="CalculoUtilidad(2)" onKeyPress="return acceptNum(event)"    CssClass="form-control" ID="txt_UtilidadTotal"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-2">
                                             <div class="form-group">
                                                 <label>Total Precio Venta :</label>
-                                               <asp:TextBox runat="server" style="text-align:right" Text="0.00"   CssClass="form-control" ID="txt_VentaTotal"></asp:TextBox>
+                                               <asp:TextBox runat="server" style="text-align:right" Text="0.00" onKeyPress="return false;"   CssClass="form-control" ID="txt_VentaTotal"></asp:TextBox>
                                             </div>
                                         </div>
                                     </div>
@@ -286,7 +312,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 
-                                                
+                                                <div style="width:100%;height:550px;overflow:auto">
 
                                                                                         <asp:DataGrid ID="dg_Almacen" runat="server" Width="100%" CssClass="table table-hover table-striped"   
                                                                                                   PageSize="19"  AutoGenerateColumns="false"   OnDeleteCommand="dg_Almacen_DeleteCommand"  OnItemDataBound="dg_Almacen_ItemDataBound"    >                                                                                                                                                                                                                                                                                                                                 
@@ -374,7 +400,8 @@
                                                                                                   </Columns>
                                                                                  
                                                                                               </asp:DataGrid>
-
+                                                                                              <asp:DataGrid runat="server" ID="dg_Excel"></asp:DataGrid>
+                                                </div>
                                             </div>
                                         </div>
                                         

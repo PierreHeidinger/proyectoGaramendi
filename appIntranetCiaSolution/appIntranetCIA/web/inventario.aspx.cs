@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using bibliotecaClases;
 using System.Data;
+using System.Text;
+using System.IO;
 
 namespace appIntranetCIA.web
 {
@@ -151,6 +153,38 @@ namespace appIntranetCIA.web
             }
             catch (Exception EX)
             {
+
+            }
+        }
+
+        protected void btn_ExportarExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (dg_Inventario.Items.Count > 0)
+                {
+
+                    StringWriter stringWriter = new StringWriter();
+                    HtmlTextWriter htmlWriter = new HtmlTextWriter(stringWriter);
+                    dg_Inventario.RenderControl(htmlWriter);
+
+                    Response.Buffer = true;
+                    Response.ContentType = "application/vnd.ms-excel";
+                    Response.AddHeader("content-disposition", "attachment; filename= " + "Export to Sicnet Inventario -" + DateTime.Now.ToString("dd/MM/yyyy") + ".xls");
+                    Response.ContentEncoding = System.Text.Encoding.UTF8;
+                    Response.Charset = "";
+
+                    Response.Write(stringWriter.ToString());
+                    Response.End();
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Notificacion("2", ex.Message);
 
             }
         }

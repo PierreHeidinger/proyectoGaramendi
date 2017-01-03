@@ -7,7 +7,7 @@
          <div class="col-md-12">
                             <asp:Literal runat="server" ID="lt_Notificacion"></asp:Literal>
                             </div>
-                             <asp:Button runat="server" Text="." Width="1" BackColor="#FFFFFF" Height="1" />
+                             <asp:Button runat="server" Text="." Width="1" BackColor="#F9F5F5" BorderStyle="None" Height="1" />
                             <div class="col-md-12">
                                    <div class="form-group">
                                        
@@ -16,8 +16,8 @@
                                         <asp:Button runat="server" Text="CATEGORIAS"  Width="130px" ID="btn_Categorias" CssClass="btn btn-info btn-fill" OnClick="btn_Categorias_Click" />
                                         <asp:Button runat="server" Text="SUB-CATEG" Width="130px" ID="btn_SubCategorias" CssClass="btn btn-info btn-fill" OnClick="btn_SubCategorias_Click" />                                      
                                         <asp:Button runat="server" Text="MARCAS" ID="btn_Marcas" Width="130px"  CssClass="btn btn-info btn-fill" OnClick="btn_Marcas_Click" />
-                                         <asp:Button runat="server" Text="IMPRIMIR" Width="130px"  CssClass="btn btn-warning btn-fill" />
-                                        <asp:Button runat="server" ID="btn_ExportarExcel" Width="130px"  Text="EXCEL" BackColor="#1ABC9C" CssClass="btn btn-default btn-fill pull-right"  />
+                                         <asp:Button runat="server" Text="IMPRIMIR" Visible="false" Width="130px"  CssClass="btn btn-warning btn-fill" />
+                                        <asp:Button runat="server" ID="btn_ExportarExcel" Width="130px"  Text="EXCEL" BackColor="#1ABC9C" CssClass="btn btn-default btn-fill pull-right" OnClick="btn_ExportarExcel_Click"  />
                                    </div>                                   
                              </div>  
 
@@ -104,7 +104,7 @@
                             </div>
                             <div class="content">
                                 
-                                    <div style="overflow:auto;height:100%;width:100%">
+                                    <div style="overflow:auto;height:550px;width:100%">
                                                                                               <asp:DataGrid ID="dg_Inventario" runat="server" Width="100%" CssClass="table table-hover table-striped"   
                                                                                                   PageSize="19"  AutoGenerateColumns="false"   >                                                                                                                                                                                                                                                                                                                                 
                                                                                                   <HeaderStyle  Font-Bold="true"  ForeColor="White" BackColor="#1ABC9C"/>

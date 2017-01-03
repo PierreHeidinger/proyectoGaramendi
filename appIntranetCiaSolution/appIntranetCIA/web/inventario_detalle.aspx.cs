@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using bibliotecaClases;
 using System.Data;
+using System.IO;
 
 namespace appIntranetCIA.web
 {
@@ -287,7 +288,7 @@ namespace appIntranetCIA.web
                     {
                         mostrar_panel(1);
                         estado_controles(true);
-                            cbo_Marca.Enabled = false;
+                        cbo_Estado.Enabled = false;
                            
                           }
                     
@@ -353,7 +354,7 @@ namespace appIntranetCIA.web
                 }
                 else{
                     String codigo = obj_inventario.FPub_MantenimientoInventario("1", txt_Codigo.Text, cbo_Categoria.SelectedValue, cbo_SubCategoria.SelectedValue, cbo_Marca.SelectedValue,
-                                                                             txt_Descripcion.Text.ToUpper(), float.Parse(txt_Peso.Text), cbo_Estado.SelectedValue, "          ");
+                                                                             txt_Descripcion.Text.ToUpper(), float.Parse(txt_Peso.Text.Replace(".",",")), cbo_Estado.SelectedValue, "          ");
                     Response.Redirect("inventario_detalle.aspx?cod_producto=" + codigo + "&n=1");
                 }
 
@@ -465,7 +466,7 @@ namespace appIntranetCIA.web
 
 
                 String res = obj_inventario.FPub_ProductosAlmacenMant("1","" ,Request.QueryString["cod_producto"], int.Parse(txt_Cantidad.Text), int.Parse(txt_Cantidad.Text),
-                                                                      float.Parse(txt_UnidadCompra.Text), float.Parse(txt_TotalCompra.Text), float.Parse(txt_UtilidadUnidad.Text),float.Parse( txt_UtilidadTotal.Text), "1");
+                                                                      float.Parse(txt_UnidadCompra.Text.Replace(".",",")), float.Parse(txt_TotalCompra.Text.Replace(".", ",")), float.Parse(txt_UtilidadUnidad.Text.Replace(".", ",")),float.Parse( txt_UtilidadTotal.Text.Replace(".", ",")), "1");
 
 
                 Notificacion("1", "Ingreso registrado con exito!");
@@ -490,6 +491,41 @@ namespace appIntranetCIA.web
         protected void btn_Limpiar_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        protected void btn_Excel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                oDt_Datos = obj_inventario.FPub_ListarProductosAlmacen(Request.QueryString["cod_producto"]);
+                dg_Excel.DataSource = oDt_Datos;
+                dg_Excel.DataBind();
+
+                if (dg_Excel.Items.Count > 0)
+                {
+
+                    StringWriter stringWriter = new StringWriter();
+                    HtmlTextWriter htmlWriter = new HtmlTextWriter(stringWriter);
+                    dg_Excel.RenderControl(htmlWriter);
+
+                    Response.Buffer = true;
+                    Response.ContentType = "application/vnd.ms-excel";
+                    Response.AddHeader("content-disposition", "attachment; filename= " + "Export to Sicnet Almacen -" + DateTime.Now.ToString("dd/MM/yyyy") + ".xls");
+                    Response.ContentEncoding = System.Text.Encoding.UTF8;
+                    Response.Charset = "";
+
+                    Response.Write(stringWriter.ToString());
+                    Response.End();
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Notificacion("2", ex.Message);
+
+            }
         }
     }
 }

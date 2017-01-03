@@ -165,16 +165,24 @@
 <script src="../Content/master/js/demo.js"></script>
 
 
+    <!--
+      <script>
+
+        $(document).ready(function () {
+
+           
+            demo.initChartist();
+
+
+
+        });
+
+
+    </script>
+
+        -->
 
     
-	<script type="text/javascript">
-    	$(document).ready(function(){
-
-        	demo.initChartist();
-
-        	
-
-    	});
-	</script>
+	
 
 </html>

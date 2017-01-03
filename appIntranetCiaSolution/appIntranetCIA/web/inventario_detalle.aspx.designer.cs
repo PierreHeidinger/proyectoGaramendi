@@ -175,13 +175,13 @@ namespace appIntranetCIA.web {
         protected global::System.Web.UI.WebControls.TextBox txt_Producto;
         
         /// <summary>
-        /// Control txt_Resumen.
+        /// Control btn_Excel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button txt_Resumen;
+        protected global::System.Web.UI.WebControls.Button btn_Excel;
         
         /// <summary>
         /// Control txt_Cantidad.
@@ -263,5 +263,14 @@ namespace appIntranetCIA.web {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataGrid dg_Almacen;
+        
+        /// <summary>
+        /// Control dg_Excel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataGrid dg_Excel;
     }
 }

@@ -300,6 +300,7 @@ namespace appIntranetCIA.web
 
                     if(Request.QueryString["cod_cliente"] != null)
                     {
+                        
                         MostrarDetalle_Cliente(Request.QueryString["cod_cliente"]);
                         setear_Historico(Request.QueryString["cod_cliente"]);
                         
@@ -309,15 +310,16 @@ namespace appIntranetCIA.web
                         if (Request.QueryString["nuevo"] != null)
                         {
                             Notificacion("1", "El cliente a sido creado satisfactoriamente");
+                            return;
                         }
-                        
+                        MostrarPaneles(1);
                     }
                     else
                     {
                         Estado_Controles(true);
                        
                     }
-                    MostrarPaneles(1);
+                    
 
                 }
                 catch(Exception ex)
