@@ -275,9 +275,11 @@
     <Content Include="Content\master\sass\light-bootstrap-dashboard.scss" />
     <Content Include="images\borra.png" />
     <Content Include="images\cliente.png" />
+    <Content Include="images\documentprint.png" />
     <Content Include="images\icono_calendario.png" />
     <Content Include="images\package_add_256.png" />
     <Content Include="images\warning.gif" />
+    <Content Include="web\documentos\consolidado.aspx" />
     <Content Include="web\inventario_detalle.aspx" />
     <Content Include="web\login\Login.aspx" />
     <Content Include="web\marcas.aspx" />
@@ -382,6 +384,13 @@
     </Compile>
     <Compile Include="web\cliente_detalle.aspx.designer.cs">
       <DependentUpon>cliente_detalle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\documentos\consolidado.aspx.cs">
+      <DependentUpon>consolidado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\documentos\consolidado.aspx.designer.cs">
+      <DependentUpon>consolidado.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

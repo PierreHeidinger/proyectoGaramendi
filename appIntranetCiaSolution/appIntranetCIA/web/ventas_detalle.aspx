@@ -55,7 +55,7 @@
                                    <div class="form-group">
                                        
                                         <asp:Button runat="server" ID="btn_Ventas" OnClick="btn_Ventas_Click" Text="VENTAS" Width="130" CssClass="btn btn-warning btn-fill"  />
-                                        <asp:Button runat="server" ID="btn_Consolidado" Text="CONSOLIDADO" Width="130" CssClass="btn btn-default btn-fill"  />
+                                        <asp:Button runat="server" ID="btn_Consolidado" OnClick="btn_Consolidado_Click" Text="CONSOLIDADO" Width="130" CssClass="btn btn-default btn-fill"  />
                                         <asp:Button runat="server" ID="btn_Boleta" Text="BOLETA" Width="130" CssClass="btn btn-default btn-fill"  />
                                         <asp:Button runat="server" ID="btn_Factura" Text="FACTURA" Width="130" CssClass="btn btn-default btn-fill"  />
                                         <asp:Button runat="server" ID="btn_Guia" Text="GUIA R." Width="130" CssClass="btn btn-default btn-fill"  />                                      
