@@ -117,7 +117,14 @@ namespace appIntranetCIA.web
             {
                 TextBox codigo = (TextBox)dg_Marcas.Items[e.Item.ItemIndex].FindControl("cod_marca_del");
 
-                obj_Inventario.FPub_MantenimientoMarcas("2", codigo.Text, "", "");
+               string res = obj_Inventario.FPub_MantenimientoMarcas("2", codigo.Text, "", "");
+
+                if (int.Parse(res) < 1)
+                {
+                    Notificacion("2", "NO SE PUEDE ELIMINAR UNA MARCA QUE TIENE PRODUCTOS ASOCIADOS");
+                    return;
+                }
+
 
                 Notificacion("1", "MARCA ELIMINADA SATISFACTORIAMENTE");
 

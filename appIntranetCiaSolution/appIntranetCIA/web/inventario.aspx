@@ -136,6 +136,15 @@
                                                                                                           </ItemTemplate>
 
                                                                                                       </asp:TemplateColumn>
+                                                                                                      <asp:TemplateColumn HeaderStyle-HorizontalAlign="Left" HeaderText="CANTIDAD R.">
+                                                                                                          <ItemStyle HorizontalAlign="Right" Width="1%" />
+                                                                                                          <ItemTemplate>                                                                                                 
+                                                                                                                   <%# Eval("CANTIDAD_R") %>                                                                                                 
+                                                                                                  
+
+                                                                                                          </ItemTemplate>
+
+                                                                                                      </asp:TemplateColumn>
 
                                                                                                       
                                                                                                         <asp:TemplateColumn HeaderStyle-HorizontalAlign="Left" HeaderText="ESTADO">

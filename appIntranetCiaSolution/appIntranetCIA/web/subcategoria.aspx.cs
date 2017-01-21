@@ -132,7 +132,15 @@ namespace appIntranetCIA.web
             {
                 TextBox codigo = (TextBox)dg_SubCategorias.Items[e.Item.ItemIndex].FindControl("cod_subCategoria_delete");
 
-                obj_Inventario.FPub_MantenimientoSubCategoria("2", codigo.Text, "", "");
+                String res = obj_Inventario.FPub_MantenimientoSubCategoria("2", codigo.Text, "", "");
+
+                if (int.Parse(res) < 1)
+                {
+                    Notificacion("2", "NO SE PUEDE ELIMINAR UNA SUB-CATEGORIA QUE TIENE PRODUCTOS ASOCIADOS");
+                    return;
+                }
+
+
                 Notificacion("1", "SUB CATEGORIA ELIMINADA CON EXITO");
                 mostrarSubCategorias();
 

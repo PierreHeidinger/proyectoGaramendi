@@ -10,87 +10,105 @@
 namespace appIntranetCIA.web.documentos {
     
     
-    public partial class consolidado {
+    public partial class factura {
         
         /// <summary>
-        /// Control pnFactura.
+        /// Control form1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnFactura;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Control lbl_Cliente.
+        /// Control lbl_cliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Cliente;
+        protected global::System.Web.UI.WebControls.Label lbl_cliente;
         
         /// <summary>
-        /// Control lbl_Direccion.
+        /// Control lbl_direccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Direccion;
+        protected global::System.Web.UI.WebControls.Label lbl_direccion;
         
         /// <summary>
-        /// Control lbl_Ruc.
+        /// Control lbl_ruc.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Ruc;
+        protected global::System.Web.UI.WebControls.Label lbl_ruc;
         
         /// <summary>
-        /// Control lbl_cp.
+        /// Control lbl_condicionPago.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lbl_cp;
+        protected global::System.Web.UI.WebControls.Label lbl_condicionPago;
         
         /// <summary>
-        /// Control lbl_Vendedor.
+        /// Control lbl_ven.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lbl_Vendedor;
+        protected global::System.Web.UI.WebControls.Label lbl_ven;
         
         /// <summary>
-        /// Control lbl_Orden.
+        /// Control lbl_num_or.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lbl_Orden;
+        protected global::System.Web.UI.WebControls.Label lbl_num_or;
         
         /// <summary>
-        /// Control lbl_n_guia.
+        /// Control lbl_num_guia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox lbl_n_guia;
+        protected global::System.Web.UI.WebControls.Label lbl_num_guia;
         
         /// <summary>
-        /// Control btn_Render.
+        /// Control lbl_subtotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Render;
+        protected global::System.Web.UI.WebControls.Label lbl_subtotal;
+        
+        /// <summary>
+        /// Control lbl_igv.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_igv;
+        
+        /// <summary>
+        /// Control lbl_total.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_total;
     }
 }

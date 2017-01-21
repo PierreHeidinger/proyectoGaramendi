@@ -14,6 +14,10 @@
             $('#modalProductos').modal({ show: true });
         }
 
+        function openModalG() {
+            $('#modalGuia').modal({ show: true });
+        }
+
         function CheckOne(obj) {
             var grid = obj.parentNode.parentNode.parentNode;
             var inputs = grid.getElementsByTagName("input");
@@ -52,14 +56,13 @@
 
     </div>
     <div class="col-md-12">
-                                   <div class="form-group">
-                                       
+                                   <div class="form-group">                                   
                                         <asp:Button runat="server" ID="btn_Ventas" OnClick="btn_Ventas_Click" Text="VENTAS" Width="130" CssClass="btn btn-warning btn-fill"  />
-                                        <asp:Button runat="server" ID="btn_Consolidado" OnClick="btn_Consolidado_Click" Text="CONSOLIDADO" Width="130" CssClass="btn btn-default btn-fill"  />
+                                        <asp:Button runat="server" ID="btn_Consolidado" Visible="false" OnClick="btn_Consolidado_Click" Text="CONSOLIDADO" Width="130" CssClass="btn btn-default btn-fill"  />
                                         <asp:Button runat="server" ID="btn_Boleta" OnClick="btn_Boleta_Click" Text="BOLETA" Width="130" CssClass="btn btn-default btn-fill"  />
-                                        <asp:Button runat="server" ID="btn_Factura" Text="FACTURA" Width="130" CssClass="btn btn-default btn-fill"  />
-                                        <asp:Button runat="server" ID="btn_Guia" Text="GUIA R." Width="130" CssClass="btn btn-default btn-fill"  />                                      
-                                       
+                                        <asp:Button runat="server" ID="btn_Factura" Text="FACTURA" Width="130" CssClass="btn btn-default btn-fill" OnClick="btn_Factura_Click"  />
+                                        <asp:Button runat="server" ID="btn_Guia" Visible="false" Text="GUIA R." Width="130" CssClass="btn btn-default btn-fill" OnClick="btn_Guia_Click"    />                                      
+                                        
                                    </div>                                   
                              </div>  
 
@@ -156,10 +159,10 @@
                                                     <a onclick="openModalP();"> <img src="../images/package_add_256.png"  style="width:35px" id="a_Productos" /></a>
                                                     <label>Agreagar Productos...</label>
                                                    </div>
-                                                <div class="col-md-8">
+                                                <div class="col-md-8" style="display:none">
                                                        <div class="btn-fill pull-right">
                                                         <label style="color:black">DISGREGAR IGV.</label>
-                                                         <asp:RadioButtonList runat="server" ID="rdo_IGV" AutoPostBack="true" RepeatDirection="Horizontal" Font-Bold="true" OnSelectedIndexChanged="rdo_IGV_SelectedIndexChanged">
+                                                         <asp:RadioButtonList runat="server" ID="rdo_IGV" Visible="false" AutoPostBack="true" RepeatDirection="Horizontal" Font-Bold="true" OnSelectedIndexChanged="rdo_IGV_SelectedIndexChanged">
                                                              <asp:ListItem Value="1">SI</asp:ListItem>
                                                              <asp:ListItem Value="2" Selected="True">NO</asp:ListItem>
                                                          </asp:RadioButtonList>
@@ -170,7 +173,8 @@
                                        </div>
 
                                    </div>
-                                 
+                                   
+                                  <hr />
 
                                     <div class="row">
                                         
@@ -187,31 +191,31 @@
                                                             <asp:TemplateField HeaderText="CANTIDAD">
                                                                 <ItemStyle HorizontalAlign="Center" />
                                                                 <ItemTemplate>
-                                                                    <asp:TextBox runat="server" ID="txt_Cantidad_c" onKeyPress="return checkIt(event)" AutoPostBack="true" OnTextChanged="txt_Cantidad_c_TextChanged" Text ='<%# Eval("CANTIDAD") %>' style="text-align:center" Width="30px"></asp:TextBox>
+                                                                    <asp:TextBox runat="server" ID="txt_Cantidad_c"  onKeyPress="return checkIt(event)" AutoPostBack="true" OnTextChanged="txt_Cantidad_c_TextChanged" Text ='<%# Eval("CANTIDAD") %>' style="text-align:center" Width="60px"></asp:TextBox>
                                                                 </ItemTemplate>
                                                             </asp:TemplateField>
                                                             <asp:TemplateField HeaderText="PRECIO U. S/.">
                                                                 <ItemStyle HorizontalAlign="Center" />
                                                                 <ItemTemplate>
-                                                                    <asp:TextBox runat="server" ID="txt_Precio_u" onKeyPress="return acceptNum(event)" AutoPostBack="true" OnTextChanged="txt_Precio_u_TextChanged"  Text ='<%# Eval("PRECIO_V") %>' style="text-align:center" Width="60px"></asp:TextBox>
+                                                                    <asp:TextBox runat="server" ID="txt_Precio_u" onKeyPress="return acceptNum(event)" AutoPostBack="true" OnTextChanged="txt_Precio_u_TextChanged"  Text ='<%# Eval("PRECIO_V") %>' style="text-align:center" Width="70px"></asp:TextBox>
                                                                 </ItemTemplate>
                                                             </asp:TemplateField>
                                                             <asp:TemplateField HeaderText="UTILIDAD U. S/.">
                                                                 <ItemStyle HorizontalAlign="Center" />
                                                                 <ItemTemplate>
-                                                                    <asp:TextBox runat="server" ID="txt_Utilidad_u"  onKeyPress="return acceptNum(event)" AutoPostBack="true" OnTextChanged="txt_Precio_u_TextChanged"  Text ='<%# Eval("UTILIDAD_UNIDAD") %>' style="text-align:center" Width="60px"></asp:TextBox>
+                                                                    <asp:TextBox runat="server" ID="txt_Utilidad_u"  onKeyPress="return acceptNum(event)" AutoPostBack="true" OnTextChanged="txt_Precio_u_TextChanged"  Text ='<%# Eval("UTILIDAD_UNIDAD") %>' style="text-align:center" Width="70px"></asp:TextBox>
                                                                 </ItemTemplate>
                                                             </asp:TemplateField>
                                                             <asp:TemplateField HeaderText="TOT. UTILI S/.">
                                                                 <ItemStyle HorizontalAlign="Center" />
                                                                 <ItemTemplate>
-                                                                    <asp:TextBox runat="server" ID="txt_total_u" ReadOnly="true" onKeyPress="return acceptNum(event)"  AutoPostBack="true" OnTextChanged="txt_Precio_u_TextChanged"  Text ='<%# Eval("UTILIDAD_TOTAL_X") %>' style="text-align:center" Width="60px"></asp:TextBox>
+                                                                    <asp:TextBox runat="server" ID="txt_total_u" ReadOnly="true" onKeyPress="return acceptNum(event)"  AutoPostBack="true" OnTextChanged="txt_Precio_u_TextChanged"  Text ='<%# Eval("UTILIDAD_TOTAL_X") %>' style="text-align:center" Width="70px"></asp:TextBox>
                                                                 </ItemTemplate>
                                                             </asp:TemplateField>
                                                             <asp:TemplateField HeaderText="TOTAL V. S/.">
                                                                 <ItemStyle HorizontalAlign="Center" />
                                                                 <ItemTemplate>
-                                                                    <asp:TextBox runat="server" ID="txt_PrecioVenta" ReadOnly="true" BackColor="Salmon" Text ='<%# Eval("PRECIO_V") %>' style="text-align:center" Width="60px"></asp:TextBox>
+                                                                    <asp:TextBox runat="server" ID="txt_PrecioVenta" ReadOnly="true" BackColor="Salmon" Text ='<%# Eval("PRECIO_V") %>' style="text-align:center" Width="70px"></asp:TextBox>
                                                                 </ItemTemplate>
                                                             </asp:TemplateField>
                                                             <asp:TemplateField >
@@ -290,7 +294,7 @@
                                       <table>
                                           <tr>
                                               <td>
-                                                   <asp:Button  runat="server" CssClass="btn btn-danger btn-fill pull-right" ID="btn_Cancelar" Text="CANCELAR" />
+                                                   <asp:Button  runat="server" CssClass="btn btn-danger btn-fill pull-right" ID="btn_Cancelar" Text="CANCELAR" OnClick="btn_Cancelar_Click" />
                                               </td>
                                               <td>
                                                   &nbsp;
@@ -342,7 +346,7 @@
 
                                                          <div class="col-md-6">
                          
-                                                             <asp:TextBox runat="server" CssClass="form-control" onkeydown="return (event.keyCode!=13);"  placeHolder="Ingrese la Descripcion del Cliente...." ID="txt_Descripcion_cliente"></asp:TextBox>
+                                                             <asp:TextBox runat="server" AutoCompleteType="Disabled" style="text-transform:uppercase" CssClass="form-control" onkeydown="return (event.keyCode!=13);"  placeHolder="Ingrese la Descripcion del Cliente...." ID="txt_Descripcion_cliente"></asp:TextBox>
                                                          </div>
                                                          <div class="col-md-6">
                                                              <div class="btn-fill pull-right">
@@ -446,7 +450,7 @@
 
                                                          <div class="col-md-6">
                          
-                                                             <asp:TextBox runat="server" CssClass="form-control" onkeydown="return (event.keyCode!=13);"  placeHolder="Ingrese la Descripcion del Producto...." ID="txt_descripcion_producto"></asp:TextBox>
+                                                             <asp:TextBox runat="server" AutoCompleteType="Disabled" style="text-transform:uppercase" CssClass="form-control" onkeydown="return (event.keyCode!=13);"  placeHolder="Ingrese la Descripcion del Producto...." ID="txt_descripcion_producto"></asp:TextBox>
                                                          </div>
                                                          <div class="col-md-6">
                                                              <div class="btn-fill pull-right">
@@ -542,5 +546,52 @@
                             </div>
                             </div>
                             </div>    
+
+                     <div id="modalGuia" class="modal" data-backdrop="false" >
+                            <div class="modal-dialog">
+                            <div class="modal-content" style="width:150%;margin-left:-180px;margin-top:100px">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                                
+                            </div>
+                            <div class="modal-body"> 
+                              
+                              
+
+                                   
+                                             <div class="row">
+                                                 <div class="col-md-12" >
+
+                                                     <div class="form-group">
+
+
+                                                         <div class="col-md-6">
+                         
+                                                             <asp:TextBox runat="server" CssClass="form-control" onkeydown="return (event.keyCode!=13);"  placeHolder="Ingrese la Descripcion del Cliente...." ID="TextBox1"></asp:TextBox>
+                                                         </div>
+                                                         <div class="col-md-6">
+                                                             <div class="btn-fill pull-right">
+                                                                 <asp:Button  runat="server" ID="Button1" Text="BUSCAR" OnClick="btn_Buscar_cliente_Click"  Enabled="true" ViewStateMode="Enabled"  CssClass="btn btn-danger btn-fill pull-right"/>
+                                                                 </div>
+                                                         </div>                 
+                                                     </div>
+
+                                                 </div>
+            
+                                            </div>        
+                                             <hr />
+                                  
+                                <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                                                        <asp:Button runat="server" ID="Button2" OnClick="btn_Cargar_Click" CssClass="btn btn-info"  Text="CARGAR" />
+                                                        
+                                    </div>
+                            </div>
+                               
+                            </div>
+                            </div>
+                            </div>
 
 </asp:Content>

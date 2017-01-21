@@ -72,7 +72,7 @@
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <label>HISTORICO CLIENTE : </label>
-                                                <div style="overflow:auto">
+                                                <div style="overflow:auto;height:400px">
                                                                                               <asp:DataGrid ID="dg_Categorias" runat="server" Width="100%" CssClass="table table-hover table-striped"   
                                                                                                   PageSize="19"  AutoGenerateColumns="false" OnDeleteCommand="dg_Categorias_DeleteCommand"   >                                                                                                                                                                                                                                                                                                                                 
                                                                                                   <HeaderStyle  Font-Bold="true"  ForeColor="White" BackColor="#1ABC9C"/>

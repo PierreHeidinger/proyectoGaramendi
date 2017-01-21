@@ -22,6 +22,15 @@ namespace appIntranetCIA.web.documentos
         #region "Procedimientos"
 
 
+        void mostrarFormulario()
+        {
+            if (Request.QueryString["form"] == "1") {
+                pnFactura.Visible = true;
+                
+            }
+
+        }
+
         public void mostrar_datos_venta()
         {
             oDs_Datos = claseVentas.FPublic_MostrarDatosVenta(Request.QueryString["cod_venta"].Trim());
@@ -29,59 +38,72 @@ namespace appIntranetCIA.web.documentos
             if (oDs_Datos.Rows.Count > 0)
             {
 
-                if (oDs_Datos.Rows[0]["COD_VENTA"].ToString() != null)
-                {
-                    lbl_CodigoVenta.Text = oDs_Datos.Rows[0]["COD_VENTA"].ToString();
-                }
-                if (oDs_Datos.Rows[0]["TOTAL_COMPRA"].ToString() != null)
-                {
-                    lbl_sub_total.Text = oDs_Datos.Rows[0]["TOTAL_COMPRA"].ToString();
-                }
+
+
                 if (oDs_Datos.Rows[0]["CLIENTE"].ToString() != null)
                 {
-                    lbl_cliente.Text = oDs_Datos.Rows[0]["CLIENTE"].ToString();
-                }
-                if (oDs_Datos.Rows[0]["TELEFONO"].ToString() != null)
-                {
-                    lbl_telefono.Text = oDs_Datos.Rows[0]["TELEFONO"].ToString();
-                }
-                if (oDs_Datos.Rows[0]["DIRECCION"].ToString() != null)
-                {
-                    lbl_direccion.Text = oDs_Datos.Rows[0]["DIRECCION"].ToString();
-                }
-                if (oDs_Datos.Rows[0]["IGV"].ToString() != null)
-                {
-                    lbl_IGV.Text = oDs_Datos.Rows[0]["IGV"].ToString();
-                }
-                if (oDs_Datos.Rows[0]["TOTAL_VENTA"].ToString() != null)
-                {
-                    lbl_Total_venta.Text = oDs_Datos.Rows[0]["TOTAL_VENTA"].ToString();
-                }
-                if (oDs_Datos.Rows[0]["FECHA"].ToString() != null)
-                {
-                    lbl_Fecha_Venta.Text = oDs_Datos.Rows[0]["FECHA"].ToString();
+                    lbl_Cliente.Text = oDs_Datos.Rows[0]["CLIENTE"].ToString();
                 }
 
+                if (oDs_Datos.Rows[0]["DIRECCION_CLIENTE"].ToString() != null)
+                {
+                    lbl_Direccion.Text = oDs_Datos.Rows[0]["DIRECCION_CLIENTE"].ToString();
+                }
 
+                if (oDs_Datos.Rows[0]["DNI_RUC_CLI"].ToString() != null)
+                {
+                    lbl_Ruc.Text = oDs_Datos.Rows[0]["DNI_RUC_CLI"].ToString();
+                }
+           
 
 
             }
 
         }
 
-
-
         #endregion
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                mostrarFormulario();
                 mostrar_datos_venta();
-                // Response.Write("<script>javascript:window.print();</script>");
-                //Response.Write(oDs_Detalle.Rows.Count.ToString());
-                oDs_Detalle = claseVentas.FPub_MostrarDatosDetalle(Request.QueryString["cod_venta"].Trim());
-                //Response.Write(oDs_Detalle.Rows[0]["COD_LOTE"].ToString());
 
+            }
+        }
+
+        protected void btn_Render_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                
+
+
+
+
+                
+
+
+
+
+
+
+                String codigo = Request.QueryString["cod_venta"].ToString();
+
+                //String _open = "window.open('factura.aspx?cod_venta=" + codigo + "', 'sicnet', 'width=800,height=300,scrollbars=NO,resizable=0,left=400%,top=20%,menubar=NO,titlebar= NO,status=NO,toolbar=NO')";
+
+                string _open = string.Format("window.open('factura.aspx?cod_venta={0}&conPago={1}&vendedor={2}&ordenC={3}&n_guia={4}', 'sicnet', 'width=800,height=300,scrollbars=NO,resizable=0,left=400%,top=20%,menubar=NO,titlebar= NO,status=NO,toolbar=NO')",codigo,lbl_cp.Text,lbl_Vendedor.Text,lbl_Orden.Text,lbl_n_guia.Text);
+
+
+                ScriptManager.RegisterStartupScript(this, GetType(), "open", _open, true);
+
+                //ScriptManager.RegisterStartupScript(this, GetType(), "close", "window.close();", true);
+
+            }catch(Exception ex)
+            {
+                Response.Write(ex.Message);
             }
         }
     }

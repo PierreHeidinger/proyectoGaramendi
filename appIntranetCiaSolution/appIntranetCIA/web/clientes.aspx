@@ -48,7 +48,7 @@
                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <label>Descripcion :</label>
-                                                <asp:TextBox runat="server" CssClass="form-control" placeHolder="G y M ..." ID="txt_Descripcion" OnTextChanged="txt_Descripcion_TextChanged" AutoCompleteType="Disabled"></asp:TextBox>
+                                                <asp:TextBox runat="server" CssClass="form-control" placeHolder="G y M ..." style="text-transform:uppercase" ID="txt_Descripcion" OnTextChanged="txt_Descripcion_TextChanged" AutoCompleteType="Disabled"></asp:TextBox>
                                                 
                                             </div>
                                         </div>

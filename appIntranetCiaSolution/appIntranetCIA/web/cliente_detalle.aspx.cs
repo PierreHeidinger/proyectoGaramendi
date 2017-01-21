@@ -305,14 +305,14 @@ namespace appIntranetCIA.web
                         setear_Historico(Request.QueryString["cod_cliente"]);
                         
                         Estado_Controles(false);
-                        
-                    
+                                             
+                        MostrarPaneles(1);
+
                         if (Request.QueryString["nuevo"] != null)
                         {
                             Notificacion("1", "El cliente a sido creado satisfactoriamente");
                             return;
                         }
-                        MostrarPaneles(1);
                     }
                     else
                     {
@@ -403,8 +403,8 @@ namespace appIntranetCIA.web
 
                 if(Request.QueryString["cod_cliente"] != null) {
 
-                    String codigo = obj_Clientes.FPub_MantenimientoClientes("2", txt_Codigo.Text, txt_Nombres.Text, txt_Apellido.Text, txt_RazonSocial.Text, cbo_TipoDocumento.SelectedValue,
-                                                                        txt_NumDocumento.Text, txt_Direccion.Text, txt_Telefono.Text, txt_Celular.Text, cbo_Distrito.SelectedValue, cbo_Provincia.SelectedValue,
+                    String codigo = obj_Clientes.FPub_MantenimientoClientes("2", txt_Codigo.Text, txt_Nombres.Text.ToUpper(), txt_Apellido.Text.ToUpper(), txt_RazonSocial.Text.ToUpper(), cbo_TipoDocumento.SelectedValue,
+                                                                        txt_NumDocumento.Text, txt_Direccion.Text.ToUpper(), txt_Telefono.Text, txt_Celular.Text, cbo_Distrito.SelectedValue, cbo_Provincia.SelectedValue,
                                                                         cbo_Departamento.SelectedValue, "0", cbo_Estado.SelectedValue, txt_Comentario.Text ,"           ");
                     MostrarDetalle_Cliente(codigo);
                     setear_Historico(codigo);
@@ -414,8 +414,8 @@ namespace appIntranetCIA.web
                 }
                 else
                 {
-                    String codigo = obj_Clientes.FPub_MantenimientoClientes("1", txt_Codigo.Text, txt_Nombres.Text, txt_Apellido.Text, txt_RazonSocial.Text, cbo_TipoDocumento.SelectedValue,
-                                                                        txt_NumDocumento.Text, txt_Direccion.Text, txt_Telefono.Text, txt_Celular.Text, cbo_Distrito.SelectedValue, cbo_Provincia.SelectedValue,
+                    String codigo = obj_Clientes.FPub_MantenimientoClientes("1", txt_Codigo.Text, txt_Nombres.Text.ToUpper(), txt_Apellido.Text.ToUpper(), txt_RazonSocial.Text.ToUpper(), cbo_TipoDocumento.SelectedValue,
+                                                                        txt_NumDocumento.Text, txt_Direccion.Text.ToUpper(), txt_Telefono.Text, txt_Celular.Text, cbo_Distrito.SelectedValue, cbo_Provincia.SelectedValue,
                                                                         cbo_Departamento.SelectedValue, "0", cbo_Estado.SelectedValue,txt_Comentario.Text, "           ");
                     Response.Redirect("cliente_detalle.aspx?cod_cliente=" + codigo + "&nuevo=1");
                 }

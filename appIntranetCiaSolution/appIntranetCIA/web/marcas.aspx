@@ -67,7 +67,7 @@
                                         <div class="col-md-8">
                                             <div class="form-group">
                                                 <label>MARCAS DISPONIBLES ACTUALMENTE : </label>
-                                                <div style="overflow:auto">
+                                                <div style="overflow:auto;height:400px">
                                                                                               <asp:DataGrid ID="dg_Marcas" runat="server" Width="100%" CssClass="table table-hover table-striped"   
                                                                                                   PageSize="19"  AutoGenerateColumns="false"   OnDeleteCommand="dg_Marcas_DeleteCommand" >                                                                                                                                                                                                                                                                                                                                 
                                                                                                   <HeaderStyle  Font-Bold="true"  ForeColor="White" BackColor="#1ABC9C"/>

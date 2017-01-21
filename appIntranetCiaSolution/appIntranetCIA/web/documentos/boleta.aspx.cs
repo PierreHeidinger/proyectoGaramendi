@@ -17,6 +17,9 @@ namespace appIntranetCIA.web.documentos
 
         public DataTable oDs_Datos;
         public DataTable oDs_Detalle;
+        public decimal total_v;
+
+        public DateTime vg_fecha;
 
         #endregion
 
@@ -38,19 +41,21 @@ namespace appIntranetCIA.web.documentos
                     lbl_Cliente.Text = oDs_Datos.Rows[0]["CLIENTE"].ToString();
                 }
               
-                if (oDs_Datos.Rows[0]["DIRECCION"].ToString() != null)
+                if (oDs_Datos.Rows[0]["DIRECCION_CLIENTE"].ToString() != null)
                 {
-                    lbl_Direccion.Text = oDs_Datos.Rows[0]["DIRECCION"].ToString();
+                    lbl_Direccion.Text = oDs_Datos.Rows[0]["DIRECCION_CLIENTE"].ToString();
                 }
                
                 if (oDs_Datos.Rows[0]["TOTAL_VENTA"].ToString() != null)
                 {
                     lbl_TOTAL.Text = oDs_Datos.Rows[0]["TOTAL_VENTA"].ToString();
                 }
+                if (oDs_Datos.Rows[0]["DNI_RUC_CLI"].ToString() != null)
+                {
+                    lbl_Dni.Text = oDs_Datos.Rows[0]["DNI_RUC_CLI"].ToString();
+                }
 
-
-
-
+              
             }
 
         }
@@ -65,6 +70,9 @@ namespace appIntranetCIA.web.documentos
             {
                 if (!IsPostBack)
                 {
+
+                    vg_fecha = DateTime.Now;
+
                     mostrar_datos_venta();
                     
                     //Response.Write(oDs_Detalle.Rows.Count.ToString());

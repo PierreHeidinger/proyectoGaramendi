@@ -7,13 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>Factura.html</title>
 </head>
-<body bgcolor="#FBFDDF">
+<body bgcolor="#FBFDDF" style="font-family:">
     <form runat="server">
                   <!-- Cabezera -->
                     <div align="center">
                         <table width="970" border="0">
                           <tr>
-                            <td width="60%"  height="160"> </td>      
+                            <td width="60%"  height="240"> </td>      
                             <td>
                                 <table width="100%" border="0" style="height:160px">
                                       <tr>
@@ -35,43 +35,46 @@
                                 <table width="100%" border="0"  height="100%">
                                       <tr>
                                           <td width="100"></td>
-                                          <td valign="bottom" align="left"><asp:Label Width="600px" runat="server" ID="lbl_Cliente"></asp:Label> Fecha : 
-                                          </td>
+                                          <td valign="bottom" align="left"><asp:Label Width="750px" runat="server" ID="lbl_Cliente"></asp:Label> 
+                                          <%= vg_fecha.ToString("dd") %>&nbsp;&nbsp; <%= vg_fecha.ToString("MM") %>&nbsp;&nbsp;<%= vg_fecha.ToString("yyy") %></td>
                                       </tr>
                                       <tr>
                                           <td></td>
-                                          <td valign="bottom" align="left" ><asp:Label runat="server" ID="lbl_Direccion" Width="450px"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label runat="server" ID="lbl_Dni"></asp:Label></td>
+                                          <td valign="bottom" align="left" ><asp:Label runat="server" ID="lbl_Direccion" Width="600px"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label runat="server" ID="lbl_Dni"></asp:Label></td>
                                       </tr>
                                 </table>
-                            </td>        
+                            </td> 
+                                  
                           </tr>        
                         </table>
                     </div>
+                    <div style="height:40px">
 
+                    </div>
                     <!-- CONTENIDO-PRODUCTOS -->
-                    <div align="center" >
+                    <div align="center" style="width:970px" >
                         <div style="height:400px">
                          <table   border="0">
                             <tr valign="top" style="height:1%">
-                              <th width="81" scope="col"></th>
-                              <th width="81" scope="col"></th>
+                              <th width="61" scope="col"></th>
+                              <th width="61" scope="col"></th>
                               <th width="531" scope="col"></th>
                               <th width="121" scope="col"> </th>
                               <th width="121" scope="col"> </th>
                             </tr>
 
-
+                             <% int i = 1; %>
                            <% foreach (System.Data.DataRow rows in oDs_Detalle.Rows)
                                { %>
-
+                             
                             <tr valign="top" style="height:1%">
                               <td><div align="center"><%= rows["CANTIDAD"] %></div></td>
-                              <td><div align="center"><%= rows["CANTIDAD"] %></div></td>
+                              <td><div align="left"><%= i.ToString() %></div></td>
                               <td><div align="left"><%= rows["PRODUCTO"] %></div></td>
                               <td><div align="right"><%= rows["VENTA_BOLETA_X"] %></div></td>
                               <td><div align="right"><%= rows["PRECIO_VENTA_X"] %></div></td>
                             </tr>                         
-                             
+                             <% i++; %>
                            <% } %>
                                              
                           </table>

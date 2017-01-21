@@ -278,9 +278,12 @@
     <Content Include="images\documentprint.png" />
     <Content Include="images\icono_calendario.png" />
     <Content Include="images\package_add_256.png" />
+    <Content Include="Content\login\images\wallpaper.jpg" />
     <Content Include="images\warning.gif" />
     <Content Include="web\documentos\boleta.aspx" />
     <Content Include="web\documentos\consolidado.aspx" />
+    <Content Include="web\documentos\factura.aspx" />
+    <Content Include="web\documentos\guia.aspx" />
     <Content Include="web\inventario_detalle.aspx" />
     <Content Include="web\login\Login.aspx" />
     <Content Include="web\marcas.aspx" />
@@ -399,6 +402,20 @@
     </Compile>
     <Compile Include="web\documentos\consolidado.aspx.designer.cs">
       <DependentUpon>consolidado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\documentos\factura.aspx.cs">
+      <DependentUpon>factura.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\documentos\factura.aspx.designer.cs">
+      <DependentUpon>factura.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="web\documentos\guia.aspx.cs">
+      <DependentUpon>guia.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\documentos\guia.aspx.designer.cs">
+      <DependentUpon>guia.aspx</DependentUpon>
     </Compile>
     <Compile Include="web\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

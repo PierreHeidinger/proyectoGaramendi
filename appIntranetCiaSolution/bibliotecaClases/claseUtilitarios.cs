@@ -114,5 +114,31 @@ namespace bibliotecaClases
 
         #endregion
 
+        #region "Reporte Mensual de Ventas"
+
+
+        public DataTable FPub_Reporte_X_MESES_Ventas()
+        {
+            return FPriv_Reporte_X_MESES_Ventas();
+        }
+
+
+        private DataTable FPriv_Reporte_X_MESES_Ventas()
+        {
+
+            cn.getCn.Open();
+
+            SqlCommand cmd = new SqlCommand("SP_REP_VENTAS_X_MESES_ANUALES", cn.getCn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+
+            return dt;
+
+        }
+
+        #endregion
+
     }
 }

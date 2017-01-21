@@ -62,16 +62,16 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label runat="server" visible="false"  id="lbl_nombre_nat">Nombres :</label>
-                                                <asp:TextBox runat="server" Visible="false" ID="txt_Nombres" CssClass="form-control" AutoCompleteType="Disabled"></asp:TextBox>
+                                                <asp:TextBox runat="server" Visible="false" ID="txt_Nombres" style="text-transform:uppercase" CssClass="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                                 
                                                 <label runat="server" visible="false"  id="lbl_razon_social">Razon Social :</label>
-                                                <asp:TextBox runat="server" Visible="false" ID="txt_RazonSocial" CssClass="form-control" AutoCompleteType="Disabled"></asp:TextBox>
+                                                <asp:TextBox runat="server" Visible="false" ID="txt_RazonSocial" style="text-transform:uppercase" CssClass="form-control" AutoCompleteType="Disabled"></asp:TextBox>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label  runat="server" visible="false" id="lbl_apellido_nat">Apellidos</label>
-                                                <asp:TextBox runat="server" Visible="false" ID="txt_Apellido" CssClass="form-control" AutoCompleteType="Disabled" ></asp:TextBox>
+                                                <asp:TextBox runat="server" Visible="false" ID="txt_Apellido" style="text-transform:uppercase" CssClass="form-control" AutoCompleteType="Disabled" ></asp:TextBox>
                                             </div>
                                         </div>
 
@@ -82,7 +82,7 @@
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Direccion : </label>
-                                                <asp:TextBox runat="server" ID="txt_Direccion" CssClass="form-control" AutoCompleteType="Disabled"></asp:TextBox>
+                                                <asp:TextBox runat="server" ID="txt_Direccion" CssClass="form-control" style="text-transform:uppercase" AutoCompleteType="Disabled"></asp:TextBox>
                                             </div>
                                         </div>
                                         

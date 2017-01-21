@@ -111,7 +111,7 @@ namespace appIntranetCIA.web
                  String res  = obj_inventario.FPub_MantenimientoCategoria("2", codigo.Text, "");
                  if(int.Parse(res) < 1)
                     {
-                        Notificacion("2", "NO SE PUEDE ELIMINAR UNA CATEGORIA QUE TIENE SUB-CATEGORIAS ASOCIADAS");
+                        Notificacion("2", "NO SE PUEDE ELIMINAR UNA CATEGORIA QUE TIENE SUB-CATEGORIAS ASOCIADAS Y/O PRODUCTOS ASOCIADOS");
                         return;
                     }
                  Notificacion("1", "CATEGORIA ELIMINADA");

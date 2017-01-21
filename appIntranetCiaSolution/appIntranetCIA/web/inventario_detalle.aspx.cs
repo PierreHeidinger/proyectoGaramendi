@@ -377,6 +377,7 @@ namespace appIntranetCIA.web
             {
                 MostrarDatos_Producto(txt_Codigo.Text);
                 estado_controles(false);
+                mostrar_panel(1);
             }
             else
             {

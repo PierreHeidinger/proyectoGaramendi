@@ -71,6 +71,11 @@ namespace appIntranetCIA.web
                 {
                     ListarVentas();
 
+                    if(Request.QueryString["event"] != null)
+                    {
+                        Notificacion("1", "VENTA AGREGADA");
+                    }
+
                 }
                 catch ( Exception ex  )
                 {

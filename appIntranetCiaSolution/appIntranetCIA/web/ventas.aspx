@@ -15,10 +15,7 @@
                                        
                                         <asp:Button runat="server" ID="btn_Nuevo" Text="NUEVO" Width="130px" CssClass="btn btn-info btn-fill" OnClick="btn_Nuevo_Click"  />
                                         
-                                        <asp:Button runat="server" Text="CATEGORIAS"  Width="130px" ID="btn_Categorias" CssClass="btn btn-info btn-fill"  />
-                                        <asp:Button runat="server" Text="SUB-CATEG" Width="130px" ID="btn_SubCategorias" CssClass="btn btn-info btn-fill"  />                                      
-                                        <asp:Button runat="server" Text="MARCAS" ID="btn_Marcas" Width="130px"  CssClass="btn btn-info btn-fill"  />
-                                         <asp:Button runat="server" Text="REPORTES" Visible="false" ID="btn_Reportes" Width="130px"  CssClass="btn btn-warning btn-fill" />
+                                      
                                         <asp:Button runat="server" ID="btn_ExportarExcel" Width="130px"  Text="EXCEL" BackColor="#1ABC9C" CssClass="btn btn-default btn-fill pull-right" OnClick="btn_ExportarExcel_Click"  />
                                    </div>                                   
                              </div>  
@@ -106,7 +103,7 @@
                             </div>
                             <div class="content">
                                 
-                                    <div style="overflow:auto;height:550px;width:100%">
+                                    <div style="overflow:auto;height:450px;width:100%">
                                                                                               <asp:DataGrid ID="dg_ventas" runat="server" Width="100%" CssClass="table table-hover table-striped"   
                                                                                                    AutoGenerateColumns="false" >                                                                                                                                                                                                                                                                                                                                 
                                                                                                   <HeaderStyle  Font-Bold="true"  ForeColor="White" BackColor="#1ABC9C"/>

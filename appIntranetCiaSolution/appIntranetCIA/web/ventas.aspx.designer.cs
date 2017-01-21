@@ -31,42 +31,6 @@ namespace appIntranetCIA.web {
         protected global::System.Web.UI.WebControls.Button btn_Nuevo;
         
         /// <summary>
-        /// Control btn_Categorias.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Categorias;
-        
-        /// <summary>
-        /// Control btn_SubCategorias.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_SubCategorias;
-        
-        /// <summary>
-        /// Control btn_Marcas.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Marcas;
-        
-        /// <summary>
-        /// Control btn_Reportes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Reportes;
-        
-        /// <summary>
         /// Control btn_ExportarExcel.
         /// </summary>
         /// <remarks>
