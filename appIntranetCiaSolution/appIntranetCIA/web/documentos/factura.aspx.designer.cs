@@ -85,6 +85,15 @@ namespace appIntranetCIA.web.documentos {
         protected global::System.Web.UI.WebControls.Label lbl_num_guia;
         
         /// <summary>
+        /// Control lbl_letras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_letras;
+        
+        /// <summary>
         /// Control lbl_subtotal.
         /// </summary>
         /// <remarks>

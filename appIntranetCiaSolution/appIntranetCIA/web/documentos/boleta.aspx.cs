@@ -55,7 +55,9 @@ namespace appIntranetCIA.web.documentos
                     lbl_Dni.Text = oDs_Datos.Rows[0]["DNI_RUC_CLI"].ToString();
                 }
 
-              
+
+                //lbl_guia.Text = Request.QueryString["guia"].ToString();
+                //
             }
 
         }
@@ -73,9 +75,14 @@ namespace appIntranetCIA.web.documentos
 
                     vg_fecha = DateTime.Now;
 
+                    lbl_guia.Text = Request.QueryString["guia"].ToString();
+                    lbl_letras.Text = Request.QueryString["letras"].ToString();
+
                     mostrar_datos_venta();
-                    
+
                     //Response.Write(oDs_Detalle.Rows.Count.ToString());
+                   
+
                     oDs_Detalle = claseVentas.FPub_MostrarDatosDetalle(Request.QueryString["cod_venta"].Trim());
                     Response.Write("<script>javascript:window.print();</script>");
 

@@ -85,6 +85,24 @@ namespace appIntranetCIA.web.documentos {
         protected global::System.Web.UI.WebControls.TextBox lbl_n_guia;
         
         /// <summary>
+        /// Control lbl_letras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lbl_letras;
+        
+        /// <summary>
+        /// Control cbo_modena.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cbo_modena;
+        
+        /// <summary>
         /// Control btn_Render.
         /// </summary>
         /// <remarks>
@@ -92,5 +110,41 @@ namespace appIntranetCIA.web.documentos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Render;
+        
+        /// <summary>
+        /// Control pnBoleta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnBoleta;
+        
+        /// <summary>
+        /// Control lbl_guia.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lbl_guia;
+        
+        /// <summary>
+        /// Control lbl_totalletras.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lbl_totalletras;
+        
+        /// <summary>
+        /// Control btnBoleta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBoleta;
     }
 }

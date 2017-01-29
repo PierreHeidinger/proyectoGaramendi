@@ -7,21 +7,61 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>Factura.html</title>
     <style type="text/css">
-        .auto-style1 {
-            width: 208px;
-        }
-        .auto-style2 {
-            width: 125px;
-        }
         .auto-style3 {
             height: 33px;
         }
         .auto-style4 {
             margin-top: 0px;
         }
+        .auto-style5 {
+            width: 457px;
+        }
+        .auto-style9 {
+            width: 63%;
+        }
+        .auto-style11 {
+            width: 134px;
+            height: 2px;
+        }
+        .auto-style12 {
+            height: 2px;
+        }
+        .auto-style13 {
+            width: 134px;
+            height: 4px;
+        }
+        .auto-style14 {
+            height: 4px;
+        }
+        .auto-style16 {
+            width: 126px;
+        }
+        .auto-style17 {
+            width: 277px;
+            height: 13px;
+        }
+        .auto-style18 {
+            width: 134px;
+            height: 13px;
+        }
+        .auto-style20 {
+            width: 72px;
+        }
+        .auto-style21 {
+            width: 83px;
+        }
+        .auto-style23 {
+            height: 92%;
+        }
+        .auto-style24 {
+            width: 99px;
+        }
+        .auto-style25 {
+            height: 13px;
+        }
     </style>
 </head>
-<body>
+<body >
 
     <form id="form1" runat="server">
 
@@ -29,9 +69,9 @@
     <div align="center">
         <table width="970" border="0">
           <tr>
-            <td width="60%"  height="160"> </td>      
+            <td width="60%"  height="94"> </td>      
             <td>
-                <table width="100%" border="0"  height="100%">
+                <table width="100%" border="0"  >
                       <tr>
                           <td> <center><label></label></center></td>
                       </tr>
@@ -45,88 +85,83 @@
             </td>  
           </tr>        
         </table>
-          <table width="970" border="0">
+          <table width="950" border="0">
           <tr>
-            <td width="60%"  height="110"> 
-                <table width="100%" border="0"  height="100%">
+            <td  height="110" class="auto-style9"> 
+                <table width="100%" border="0" class="auto-style23">
+                    <tr>
+                        <td style="height:5px"></td>
+                    </tr>
                       <tr>
-                          <td width="100">&nbsp;</td>
-                          <td colspan="3"><asp:Label runat="server" ID="lbl_cliente"></asp:Label></td>
+                          <td class="auto-style11"></td>
+                          <td colspan="3" style="text-align:left;vertical-align:bottom" class="auto-style12" ><asp:Label  runat="server" style="font-family:sans-serif;font-size:13px" ID="lbl_cliente"></asp:Label></td>
                       </tr>
                       <tr>
-                          <td>&nbsp;</td>
-                          <td colspan="3"><asp:Label runat="server" ID="lbl_direccion"></asp:Label></td>
+                          <td class="auto-style13"></td>
+                          <td colspan="3"  style="text-align:left;vertical-align:bottom;font-family:sans-serif;font-size:13px" class="auto-style14"><asp:Label runat="server" style="font-family:sans-serif;font-size:13px" ID="lbl_direccion"></asp:Label></td>
                       </tr>
+                          
                       <tr>
-                          <td></td>
-                          <td colspan="3">&nbsp;</td>
-                      </tr>
-                      <tr>
-                          <td>&nbsp;</td>
-                          <td class="auto-style1"><asp:Label runat="server" ID="lbl_ruc"></asp:Label></td>
-                          <td class="auto-style2">&nbsp;</td>
-                          <td><asp:Label runat="server" ID="lbl_condicionPago"></asp:Label></td>
+                                                  
+                          <td class="auto-style18"></td>
+                          <td class="auto-style17" style="text-align:left;vertical-align:top"><asp:Label style="font-family:sans-serif;font-size:13px" runat="server" ID="lbl_ruc"></asp:Label></td>
+                          <td style="text-align:left;vertical-align:top" class="auto-style25"><asp:Label style="font-family:sans-serif;font-size:13px" runat="server" ID="lbl_condicionPago"></asp:Label></td>
                       </tr>
                 </table>
             </td>      
             <td>
                 <table width="100%" border="0"  height="100%" class="auto-style4">
                       
-                      <tr>
-                          <td class="auto-style3" align="center"><%= DateTime.Now.Day %>/ <%= DateTime.Now.ToString("MM") %> / <%= DateTime.Now.Year %></td>
+                      <tr >
+                          <td class="auto-style3" align="center" style="vertical-align:bottom"> &nbsp;<%= DateTime.Now.Day %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= DateTime.Now.ToString("MM") %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <%= DateTime.Now.Year %></td>
                       </tr>
                       <tr>
-                          <td valign="botton" class="auto-style3" align="left"><asp:Label runat="server" ID="lbl_ven"></asp:Label>&nbsp;<asp:Label runat="server" ID="lbl_num_or"></asp:Label>&nbsp;<asp:Label runat="server" ID="lbl_num_guia"></asp:Label></td>
+                          <td  class="auto-style3" style="vertical-align:bottom" align="left"><asp:Label runat="server" ID="lbl_ven" style="font-family:sans-serif;font-size:13px"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label style="font-family:sans-serif;font-size:13px" runat="server" ID="lbl_num_or"></asp:Label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label style="font-family:sans-serif;font-size:13px" runat="server" ID="lbl_num_guia"></asp:Label></td>
                       </tr>
                 </table>
             </td>  
           </tr>        
         </table>
     </div>
-    <div align="center">
-    <div style="height:40px">
-
-                    </div>
+    
                     <!-- CONTENIDO-PRODUCTOS -->
-                    <div align="center"  >
-                        <div style="height:400px">
+                    <div align="center" style="width:970px" >
+                        <div style="height:313px">
                          <table   border="0">
-                            <tr valign="top" style="height:1%">
-                              <th width="61" scope="col"></th>
-                              <th width="61" scope="col"></th>
-                              <th width="531" scope="col"></th>
-                              <th width="121" scope="col"> </th>
-                              <th width="121" scope="col"> </th>
-                            </tr>
+                            
 
                              <% int i = 1; %><% foreach (System.Data.DataRow rows in oDs_Detalle.Rows)
                                { %>
                              
                             <tr valign="top" style="height:1%">
-                              <td><div align="center"><%= rows["CANTIDAD"] %></div></td>
-                              <td><div align="left"><%= i.ToString() %></div></td>
-                              <td><div align="left"><%= rows["PRODUCTO"] %></div></td>
-                              <td><div align="right"><%= rows["VENTA_BOLETA_X"] %></div></td>
-                              <td><div align="right"><%= rows["PRECIO_VENTA_X"] %></div></td>
+                              <td class="auto-style16" style="text-align:center;font-family:sans-serif;font-size:13px"><%= rows["CANTIDAD"] %></td>
+                              <td class="auto-style24" style="font-family:sans-serif;font-size:13px">kg.</td>
+                              <td class="auto-style5" style="font-family:sans-serif;font-size:13px"><%= rows["PRODUCTO"] %></td>
+                              <td class="auto-style20" style="text-align:right;font-family:sans-serif;font-size:13px"><%= rows["VENTA_BOLETA_X_D"].ToString() %></td>
+                              <td class="auto-style21" style="text-align:right;font-family:sans-serif;font-size:13px"><%= rows["PRECIO_VENTA_X_D"].ToString() %></td>
                             </tr>                         
                              <% i++; %><% } %>
                                              
                           </table>
-                         </div>  
+                          
+                         </div> 
+                            <div style="height:15px;width:970px;text-align:left">
+                              &nbsp;&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label runat="server" ID="lbl_letras" T></asp:Label>
+                            </div> 
                             <table width="970" border="0">
                             <tr>
                             <td width="826" height="58"><div align="right"><strong></strong></div></td>
-                            <td width="120">
+                            <td width="70">
                                 <div align="left">
                                     <table>
                                         <tr>
-                                            <td> <strong><asp:Label runat="server" ID="lbl_subtotal"></asp:Label></strong></td>
+                                            <td>  <%= moneda %> <asp:Label style="font-family:sans-serif;font-size:13px" runat="server" ID="lbl_subtotal"></asp:Label></td>
                                         </tr>
                                         <tr>
-                                            <td> <strong><asp:Label runat="server" ID="lbl_igv"></asp:Label></strong></td>
+                                            <td>  <%= moneda %> <asp:Label style="font-family:sans-serif;font-size:13px" runat="server" ID="lbl_igv"></asp:Label></td>
                                         </tr>
                                         <tr>
-                                            <td> <strong><asp:Label runat="server" ID="lbl_total"></asp:Label></strong></td>
+                                            <td>  <%= moneda %> <asp:Label style="font-family:sans-serif;font-size:13px" runat="server" ID="lbl_total"></asp:Label></td>
                                         </tr>
                                     </table>
                                    
