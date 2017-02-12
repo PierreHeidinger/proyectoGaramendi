@@ -104,7 +104,7 @@ namespace appIntranetCIA.web.documentos
             {
                 String codigo = Request.QueryString["cod_venta"].ToString();
 
-                String _open = string.Format("window.open('boleta.aspx?cod_venta={0}&guia={1}&letras={2}', 'sicnet', 'width=800,height=600,scrollbars=NO,resizable=0,left=400%,top=20%,menubar=NO,titlebar= NO,status=NO,toolbar=NO')", codigo, lbl_guia.Text, lbl_Orden.Text);
+                String _open = string.Format("window.open('boleta.aspx?cod_venta={0}&guia={1}&letras={2}&moneda={3}', 'sicnet', 'width=800,height=600,scrollbars=NO,resizable=0,left=400%,top=20%,menubar=NO,titlebar= NO,status=NO,toolbar=NO')", codigo, lbl_guia.Text, lbl_totalletras.Text,cbo_modena_boleta.SelectedValue);
                 ScriptManager.RegisterStartupScript(this, GetType(), "open", _open, true);
             }
             catch (Exception ex)

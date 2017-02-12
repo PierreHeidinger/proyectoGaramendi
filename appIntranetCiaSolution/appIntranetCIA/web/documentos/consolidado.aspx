@@ -99,6 +99,17 @@
             </tr>
             
 
+            <tr>
+                <td class="auto-style8">MONEDA :</td>
+                <td>
+                    <asp:DropDownList ID="cbo_modena_boleta" runat="server" Height="16px" Width="129px">
+                        <asp:ListItem Selected="True" Value="S/.">SOLES</asp:ListItem>
+                        <asp:ListItem Value="$ ">DOLARES</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            
+
         </table>
         <hr />
         

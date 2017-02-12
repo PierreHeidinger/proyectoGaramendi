@@ -103,10 +103,10 @@
                                                         <td>
                                                             <br />
                                                             <hr />
-                                                            <label> Nª GUIA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-                                                            <asp:TextBox ID="txt_guia" runat="server"></asp:TextBox> <br />
-                                                            <label> Nª LETRAS :</label>
-                                                            <asp:TextBox ID="txt_nletras" runat="server"></asp:TextBox>
+                                                            
+                                                            <asp:TextBox ID="txt_guia" runat="server" Visible="False"></asp:TextBox> <br />
+                                                            
+                                                            <asp:TextBox ID="txt_nletras" runat="server" Visible="False"></asp:TextBox>
                                                         </td>
                                                         
                                                     </tr>

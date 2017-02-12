@@ -101,8 +101,8 @@
                               <td class="auto-style3"><div style="font-family:sans-serif;font-size:13px" align="right" class="auto-style8"><%= rows["CANTIDAD"] %></div></td>
                               <td class="auto-style4"><div  style="font-family:sans-serif;font-size:13px" align="center">Kg.</div></td>
                               <td class="auto-style7"><div style="font-family:sans-serif;font-size:13px" align="left"><%= rows["PRODUCTO"] %></div></td>
-                              <td><div align="right" style="font-family:sans-serif;font-size:13px" class="auto-style9"><%= double.Parse(rows["VENTA_BOLETA_X"].ToString()) + (double.Parse(rows["VENTA_BOLETA_X"].ToString()) * 0.18) %></div></td>
-                              <td><div align="center" style="font-family:sans-serif;font-size:13px"><%= double.Parse(rows["PRECIO_VENTA_X"].ToString()) + (double.Parse(rows["PRECIO_VENTA_X"].ToString()) * 0.18) %></div></td>
+                              <td><div align="right" style="font-family:sans-serif;font-size:13px" class="auto-style9"><%= rows["VENTA_BOLETA_IGV"].ToString() %></div></td>
+                              <td><div align="center" style="font-family:sans-serif;font-size:13px"><%= rows["PRECIO_VENTA_IGV"].ToString()  %></div></td>
                             </tr>                         
                              <% i++; %>                           <% } %>
                                              
@@ -110,8 +110,8 @@
                          </div>  
                             <table width="970" border="0">
                             <tr>
-                            <td height="58" class="auto-style2" style="text-align:center"><br /><br /><asp:Label runat="server" ID="lbl_letras" style="font-family:sans-serif;font-size:13px" Text="doscientos soles ccin cero centimos"></asp:Label></td>
-                            <td width="120"><div align="left"><asp:Label style="font-family:sans-serif;font-size:13px" runat="server" ID="lbl_TOTAL"></asp:Label></div></td>
+                            <td height="58" class="auto-style2" style="text-align:center"><br /><br /><asp:Label runat="server" ID="lbl_letras" style="font-family:sans-serif;font-size:13px" ></asp:Label></td>
+                            <td width="120"><div align="left"><%= moneda %><asp:Label style="font-family:sans-serif;font-size:13px" runat="server" ID="lbl_TOTAL"></asp:Label></div></td>
                             </tr>
                          </table>
                     </div>

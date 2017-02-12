@@ -20,12 +20,13 @@ namespace appIntranetCIA.web.documentos
         public decimal total_v;
 
         public DateTime vg_fecha;
+        public string moneda;
 
         #endregion
 
         #region "Procedimentos"
 
-        
+
 
         public void mostrar_datos_venta()
         {
@@ -46,16 +47,16 @@ namespace appIntranetCIA.web.documentos
                     lbl_Direccion.Text = oDs_Datos.Rows[0]["DIRECCION_CLIENTE"].ToString();
                 }
                
-                if (oDs_Datos.Rows[0]["TOTAL_VENTA"].ToString() != null)
+                if (oDs_Datos.Rows[0]["TOTAL_VENTA_X_D"].ToString() != null)
                 {
-                    lbl_TOTAL.Text = oDs_Datos.Rows[0]["TOTAL_VENTA"].ToString();
+                    lbl_TOTAL.Text = oDs_Datos.Rows[0]["TOTAL_VENTA_X_D"].ToString();
                 }
                 if (oDs_Datos.Rows[0]["DNI_RUC_CLI"].ToString() != null)
                 {
                     lbl_Dni.Text = oDs_Datos.Rows[0]["DNI_RUC_CLI"].ToString();
                 }
 
-
+                  moneda = Request.QueryString["moneda"].ToString();
                 //lbl_guia.Text = Request.QueryString["guia"].ToString();
                 //
             }

@@ -139,6 +139,15 @@ namespace appIntranetCIA.web.documentos {
         protected global::System.Web.UI.WebControls.TextBox lbl_totalletras;
         
         /// <summary>
+        /// Control cbo_modena_boleta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList cbo_modena_boleta;
+        
+        /// <summary>
         /// Control btnBoleta.
         /// </summary>
         /// <remarks>
